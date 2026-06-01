@@ -89,7 +89,9 @@ See `docs/architecture.md` for the data model, authentication model, and privacy
 
 ## Sample Images
 
-Want demo memory images that match the app style? Use the prompts in `docs/sample-image-prompts.md`.
+The demo reveal uses generated sample images from `public/samples/`.
+
+Want to generate your own images in the same style? Use the prompts in `docs/sample-image-prompts.md`.
 
 ## Privacy Notes
 

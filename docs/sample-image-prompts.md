@@ -82,9 +82,9 @@ Avoid: text, watermark, logos, readable cake writing, photorealistic hands, hars
 
 ## Suggested Filenames
 
-- `sample-photo-album.png`
-- `sample-kitchen-memory.png`
-- `sample-train-station-hug.png`
-- `sample-video-call.png`
-- `sample-childhood-bicycle.png`
-- `sample-celebration-table.png`
+- `photo-album.webp`
+- `kitchen-memory.webp`
+- `train-station-hug.webp`
+- `video-call.webp`
+- `childhood-bicycle.webp`
+- `celebration-table.webp`
