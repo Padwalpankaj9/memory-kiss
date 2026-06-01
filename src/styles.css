@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400;1,7..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-blush: var(--blush);
+  --color-warm-card: var(--warm-card);
+  --font-serif: 'Fraunces', serif;
+  --font-body: 'Literata', Georgia, serif;
+  --font-ui: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1.5rem;
+  /* Memory Kiss palette */
+  --background: #fdf5f3;
+  --foreground: #2a221e;
+  --card: #faf0ec;
+  --card-foreground: #2a221e;
+  --warm-card: #faf0ec;
+  --popover: #faf0ec;
+  --popover-foreground: #2a221e;
+  --primary: #6e2a33;
+  --primary-foreground: #fdf5f3;
+  --secondary: #f5cccb;
+  --secondary-foreground: #6e2a33;
+  --muted: #faf0ec;
+  --muted-foreground: #5a4d44;
+  --accent: #f5cccb;
+  --accent-foreground: #6e2a33;
+  --destructive: #b3261e;
+  --destructive-foreground: #fdf5f3;
+  --border: #eedbd2;
+  --input: #eedbd2;
+  --ring: #d47b7a;
+  --blush: #d47b7a;
+  --heading: #1e1815;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    background-image: url('/illustrations/paper-texture.png');
+    background-repeat: repeat;
+    background-size: 512px 512px;
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-serif);
+    color: var(--heading);
+    letter-spacing: -0.01em;
+  }
+  button, input, label {
+    font-family: var(--font-ui);
+  }
+}
+
+/* Floating heart animation */
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  10% { opacity: 0.15; }
+  80% { opacity: 0.15; }
+  100% { transform: translateY(-110vh) scale(1.05); opacity: 0; }
+}
+.float-heart {
+  position: fixed;
+  color: #d47b7a;
+  opacity: 0;
+  animation-name: float-up;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  animation-iteration-count: infinite;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+.pulse-heart { animation: heartbeat 1.4s ease-in-out infinite; }
+
+@keyframes photo-rise {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.photo-rise { animation: photo-rise 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fade-in 0.6s ease-out both; }
+
+@keyframes soft-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.soft-in { animation: soft-in 0.8s ease-out both; }
