@@ -87,6 +87,10 @@ Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in your deployment environm
 
 See `docs/architecture.md` for the data model, authentication model, and privacy tradeoffs.
 
+## Sample Images
+
+Want demo memory images that match the app style? Use the prompts in `docs/sample-image-prompts.md`.
+
 ## Privacy Notes
 
 Do not commit personal photos or real recipient data to the repository. Demo content should use generic illustrations or synthetic sample assets.
